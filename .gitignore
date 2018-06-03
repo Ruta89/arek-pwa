@@ -47,3 +47,4 @@ src/environments/
 *.spec.ts
 
 protractor.conf.js
+documentation/

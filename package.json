@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod && firebase deploy"
+    "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json  --output dist/doc",
+    "deploy": "ng build --prod && yarn compodoc && firebase deploy"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +42,7 @@
     "@angular/cli": "^6.0.7",
     "@angular/compiler-cli": "6.0.3",
     "@angular/language-service": "6.0.3",
+    "@compodoc/compodoc": "^1.1.3",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~6.0.100",

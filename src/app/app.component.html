@@ -6,10 +6,19 @@
 
   <mat-menu #menu="matMenu">
 
+    <button mat-menu-item routerLink="/dashboard">
+      <mat-icon>dashboard</mat-icon>
+      <span>Pulpit</span>
+    </button>
 
-    <button mat-menu-item routerLink="/">
-      <mat-icon>home</mat-icon>
-      <span>Start</span>
+    <a href="https://arek-pwa.firebaseapp.com/doc/index.html" mat-menu-item>
+      <mat-icon>book</mat-icon>
+      <span>Dokumentacja</span>
+    </a>
+
+    <button mat-menu-item routerLink="/produkcja">
+      <mat-icon>work</mat-icon>
+      <span>produkcja</span>
     </button>
 
     <button mat-menu-item routerLink="/czasowka">
@@ -17,15 +26,7 @@
       <span>Czasowka</span>
     </button>
 
-    <button mat-menu-item routerLink="/produkcja">
-      <mat-icon>work</mat-icon>
-      <span>produkcja</span>
-    </button>
 
-    <button mat-menu-item routerLink="/dashboard">
-      <mat-icon>dashboard</mat-icon>
-      <span>Pulpit</span>
-    </button>
 
   </mat-menu>
   Arek PWA
