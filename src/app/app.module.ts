@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -27,7 +28,7 @@ import { CzasService } from './shared/czas.service';
     ReactiveFormsModule,
     AppRoutingModule,
     MaterialModule,
-
+    FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase, 'apka-arek-pwa'),
     AngularFirestoreModule.enablePersistence(),
     AngularFireDatabaseModule,
