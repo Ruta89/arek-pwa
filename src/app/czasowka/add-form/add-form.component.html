@@ -1,0 +1,63 @@
+<mat-card>
+  <mat-card-title>
+    Dodaj
+  </mat-card-title>
+
+  <mat-card-content>
+    <form [formGroup]="addFormCzas" (ngSubmit)="onFormSubmit(addFormCzas.value)">
+      <table>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input formControlName="wll" matInput type="number" placeholder="Wll" [(ngModel)]="czasowka.wll">
+            </mat-form-field>
+            <mat-error>
+              <span *ngIf="!addFormCzas.get('min').valid && addFormCzas.get('min').touched">Please enter min !!!</span>
+            </mat-error>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>
+            <mat-form-field>
+              <input formControlName="l1" matInput type="number" placeholder="L1" [(ngModel)]="czasowka.l1">
+            </mat-form-field>
+            <mat-error>
+              <span *ngIf="!addFormCzas.get('min').valid && addFormCzas.get('min').touched">Please enter min !!!</span>
+            </mat-error>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>
+            <mat-form-field>
+              <input formControlName="szt" matInput type="number" placeholder="Szt" [(ngModel)]="czasowka.szt">
+            </mat-form-field>
+            <mat-error>
+              <span *ngIf="!addFormCzas.get('min').valid && addFormCzas.get('min').touched">Please enter min !!!</span>
+            </mat-error>
+          </td>
+        </tr>
+
+
+        <tr>
+          <td>
+            <mat-form-field>
+              <input formControlName="min" matInput type="number" placeholder="Minut" [(ngModel)]="czasowka.min">
+            </mat-form-field>
+            <mat-error>
+              <span *ngIf="!addFormCzas.get('min').valid && addFormCzas.get('min').touched">Please enter min !!!</span>
+            </mat-error>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="content-center">
+            <button mat-raised-button (click)="addCzas()" color="primary">Dodaj</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </mat-card-content>
+</mat-card>

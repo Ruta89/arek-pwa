@@ -44,4 +44,6 @@ Thumbs.db
 
 # Moje 
 src/environments/
+*.spec.ts
 
+protractor.conf.js

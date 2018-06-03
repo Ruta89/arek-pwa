@@ -1,0 +1,129 @@
+<div>
+
+
+  <mat-card fxFlex>
+    <mat-card-header>
+      <mat-card-title> {{dateNow | date:"HH:mm dd.mm.yy"}} </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      Wyrobione
+      <b> {{summMinut | number}} </b> min,
+      <b>{{sumSzt | number}}</b> szt. Brakuje:
+      <b>{{450-summMinut | number }}</b> min
+      <b>{{7.5-summMinut / 60| number }}</b> godz
+
+      <p *ngIf="sumWaga">
+        waga łacznie: {{sumWaga | number }} kg
+      </p>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-fab color="primary" routerLink="/produkcja/add">
+        <mat-icon>add</mat-icon>
+      </a>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div *ngIf="show">
+  <app-detail [idd]="show"></app-detail>
+</div>
+
+<div class="example-container mat-elevation-z8">
+
+  <div *ngIf="laduj">
+    <mat-progress-spinner mode="indeterminate">
+    </mat-progress-spinner>
+  </div>
+
+  <mat-table #table [dataSource]="MyDataSource">
+
+    <!-- Kolumny -->
+    <ng-container matColumnDef="wll">
+      <mat-header-cell *matHeaderCellDef>Wll</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.wll }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="l1">
+      <mat-header-cell *matHeaderCellDef>L1</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.l1 }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="auf">
+      <mat-header-cell *matHeaderCellDef>auf</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.auf }}
+      </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="m">
+      <mat-header-cell *matHeaderCellDef>m</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.m }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="nici">
+      <mat-header-cell *matHeaderCellDef>nici</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.nici }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="dateNow">
+      <mat-header-cell *matHeaderCellDef>data</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.dateNow | date:'HH:mm dd/MM/yy' }}
+      </mat-cell>
+    </ng-container>
+
+
+
+    <ng-container matColumnDef="szt">
+      <mat-header-cell *matHeaderCellDef>Szt</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.szt }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="czas">
+      <mat-header-cell *matHeaderCellDef>Czas</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+
+        {{ element.czas }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="more">
+      <mat-header-cell *matHeaderCellDef>Wiecej</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <!-- <app-arek-countdown endDate="{{odliczanie(element.createdAt ,element.min, element.szt)}}"></app-arek-countdown> -->
+        <!-- <br>
+           -->
+        <button mat-button (click)="showDetails(element)">
+          <mat-icon>more</mat-icon>
+        </button>
+        <button mat-button (click)="delete(element.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <div>
+          <button mat-button (click)="update(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+
+    </mat-row>
+
+  </mat-table>
+
+</div>

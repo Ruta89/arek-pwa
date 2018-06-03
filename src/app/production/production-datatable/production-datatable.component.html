@@ -1,0 +1,17 @@
+<p>
+  production-datatable works!
+</p>
+<ol>
+  <li>
+    <mat-form-field>
+      <input matInput [(ngModel)]="title" placeholder="What's your name?">
+    </mat-form-field>
+  </li>
+  <li>
+    <button mat-raised-button (click)="openDialog()">Pick one</button>
+  </li>
+  <li *ngIf="data.title">
+    You chose:
+    <i>{{priority}}</i>
+  </li>
+</ol>

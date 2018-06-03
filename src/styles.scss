@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~@ngx-gallery/core/styles/gallery';
+// purple-green.css
+// deeppurple-amber.css
+// indigo-pink.css
+// pink-bluegrey.css
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Roboto';
+  text-align: center;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: black;
+}
+
+.example {
+  width: 100%;
+  float: left;
+}
+
+ngx-gallery {
+  margin-bottom: 20px;
+}
+
+ngx-gallery-arrows.ngx-gallery-image-size-contain .fa {
+  background: white;
+  padding: 5px;
+  color: black;
+}
+
+.basic-container {
+  padding: 5px;
+}

@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Firebase Cloud Storage & Angular 5</mat-card-title>
+    <mat-card-subtitle> Select a file for upload:</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <input type="file" (change)="upload($event)" accept=".png,.jpg" />
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button type="submit">Ok</button>
+  </mat-card-actions>
+</mat-card>
+
+<!-- Upload Progress
+
+https://medium.com/codingthesmartway-com-blog/firebase-cloud-storage-with-angular-394566fd529
+
+
+ <div class="progress">
+  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0" aria-valuemax="100"></div>
+</div> -->

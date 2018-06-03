@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+
+
+    <button mat-menu-item routerLink="/">
+      <mat-icon>home</mat-icon>
+      <span>Start</span>
+    </button>
+
+    <button mat-menu-item routerLink="/czasowka">
+      <mat-icon>dialpad</mat-icon>
+      <span>Czasowka</span>
+    </button>
+
+    <button mat-menu-item routerLink="/produkcja">
+      <mat-icon>work</mat-icon>
+      <span>produkcja</span>
+    </button>
+
+    <button mat-menu-item routerLink="/dashboard">
+      <mat-icon>dashboard</mat-icon>
+      <span>Pulpit</span>
+    </button>
+
+  </mat-menu>
+  Arek PWA
+</mat-toolbar>
+<router-outlet></router-outlet>

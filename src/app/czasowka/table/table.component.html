@@ -1,0 +1,77 @@
+<div align="center">
+  <button mat-raised-button color="accent" routerLink="/czasowka/add">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+
+<mat-card>
+  <div>
+    <b>
+      Wyrobione</b> {{ sumMinut /60 | number}}godz = {{ sumMinut | number}}min
+    <b>Brakuje</b> {{( 450 - sumMinut) / 60 | number}}godz = {{ 450 - sumMinut | number }}min
+  </div>
+</mat-card>
+
+<div class="example-container mat-elevation-z8">
+
+  <div *ngIf="laduj">
+    <mat-progress-spinner mode="indeterminate">
+    </mat-progress-spinner>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource">
+
+    <!-- Kolumny -->
+    <ng-container matColumnDef="wll">
+      <mat-header-cell *matHeaderCellDef>Wll</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.wll }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="l1">
+      <mat-header-cell *matHeaderCellDef>L1</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.l1 }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="szt">
+      <mat-header-cell *matHeaderCellDef>Szt</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.szt }}
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="min">
+      <mat-header-cell *matHeaderCellDef>Minut</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <!-- {{ element.min }} | {{ element.createdAt | date:'hh:mm:ss' }} -->
+        {{ element.min }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="more">
+      <mat-header-cell *matHeaderCellDef>Wiecej</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <app-arek-countdown endDate="{{odliczanie(element.createdAt ,element.min, element.szt)}}"></app-arek-countdown>
+        <br>
+        <button mat-button (click)="delete(element.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <div>
+          <button mat-button (click)="update(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;">
+
+    </mat-row>
+
+  </mat-table>
+
+</div>

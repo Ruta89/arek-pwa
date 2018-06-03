@@ -1,0 +1,59 @@
+<h1>TODO</h1>
+
+<mat-card>
+  <ul>
+    <li *ngFor="let item of items | async">
+      {{ item.name }}
+    </li>
+  </ul>
+</mat-card>
+
+<!-- <mat-card>
+  <div *ngFor="let todo of todos | async">
+    JSON: {{ todo | json }}
+    <br> title: {{todo.title}}
+    <br> description: {{todo.description }}
+    <br> date: {{todo.date | date}}
+    <br> priority: {{todo.priority | number }}
+    <hr>
+  </div>
+</mat-card> -->
+
+<div *ngFor="let todo of todos | async">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> {{todo.title}}</mat-card-title>
+      <mat-card-subtitle> {{todo.description}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>date: {{todo.date | date}} {{todo.priority | number }} JSON: {{ todo | json }}
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Ok</button>
+    </mat-card-actions>
+
+
+  </mat-card>
+</div>
+<mat-card>
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Tytul">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="opis"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="priority">
+        <mat-option value="priority1">priority1</mat-option>
+        <mat-option value="priority2">priority2</mat-option>
+        <mat-option value="priority3">priority3</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-card-actions>
+      <button mat-raised-button color="accent">Dodaj</button>
+    </mat-card-actions>
+  </div>
+</mat-card>

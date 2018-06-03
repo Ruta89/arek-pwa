@@ -1,0 +1,55 @@
+<form [formGroup]="addFormProd" (ngSubmit)="onFormSubmit(addFormProd.value)" novalidate>
+
+
+  <mat-form-field>
+    <input formControlName="wll" type="number" matInput placeholder="wll">
+  </mat-form-field>
+  <mat-error>
+    <span *ngIf="!addFormProd.get('wll').valid && addFormProd.get('wll').touched">Wpisz wll !!!</span>
+  </mat-error>
+
+
+
+  <mat-form-field>
+    <input formControlName="l1" type="number" matInput placeholder="l1">
+  </mat-form-field>
+  <mat-error>
+    <span *ngIf="!addFormProd.get('l1').valid && addFormProd.get('l1').touched">Wpisz l1 !!!</span>
+  </mat-error>
+
+
+  <mat-form-field>
+    <input formControlName="auf" type="number" matInput placeholder="auf">
+  </mat-form-field>
+  <mat-error>
+    <span *ngIf="!addFormProd.get('auf').valid && addFormProd.get('auf').touched">Wpisz auftrag !!!</span>
+  </mat-error>
+
+
+  <mat-form-field>
+    <input formControlName="nici" type="number" matInput placeholder="nici">
+  </mat-form-field>
+  <mat-error>
+    <span *ngIf="!addFormProd.get('nici').valid && addFormProd.get('nici').touched">Wpisz nici !!!</span>
+  </mat-error>
+
+
+
+  <mat-form-field>
+    <input formControlName="szt" type="number" matInput placeholder="szt">
+  </mat-form-field>
+  <mat-error>
+    <span *ngIf="!addFormProd.get('szt').valid && addFormProd.get('szt').touched">Wpisz szt !!!</span>
+  </mat-error>
+
+  <mat-form-field>
+    <input formControlName="czas" type="number" matInput placeholder="czas">
+  </mat-form-field>
+  <mat-error>
+    <span *ngIf="!addFormProd.get('czas').valid && addFormProd.get('czas').touched">wpisz minute na sztuke !!!</span>
+  </mat-error>
+
+
+  <button mat-raised-button color="accent" [disabled]="!addFormProd.valid ">Zapisz</button>
+
+</form>
