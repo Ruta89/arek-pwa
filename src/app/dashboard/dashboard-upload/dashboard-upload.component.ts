@@ -3,7 +3,7 @@ import {
   AngularFireStorage,
   AngularFireStorageReference,
   AngularFireUploadTask
-} from 'angularfire2/storage';
+} from '@angular/fire/storage';
 
 @Component({
   selector: 'app-dashboard-upload',

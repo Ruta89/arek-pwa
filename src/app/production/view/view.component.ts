@@ -5,7 +5,7 @@ import { MyDataSource } from '../../shared/datasource';
 import { Production } from '@arek/shared/model';
 import { Router } from '@angular/router';
 import { DataSource } from '@angular/cdk/collections';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 @Component({
   selector: 'app-view',

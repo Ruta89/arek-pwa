@@ -1,7 +1,7 @@
 import { CzasService } from '../shared/czas.service';
 import { DataSource } from '@angular/cdk/collections';
 import { ProductionService } from '@arek/shared/production.service';
-// import { AngularFirestore } from 'angularfire2/firestore';
+// import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Production } from '@arek/shared/model';
 

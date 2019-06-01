@@ -11,7 +11,7 @@ import {
 import {
   AngularFirestore,
   AngularFirestoreDocument
-} from 'angularfire2/firestore';
+} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Production } from '@arek/shared/model';
 

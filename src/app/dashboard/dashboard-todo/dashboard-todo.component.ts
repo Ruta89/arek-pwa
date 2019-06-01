@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import {
   AngularFirestore,
   AngularFirestoreCollection
-} from 'angularfire2/firestore';
+} from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-dashboard-todo',

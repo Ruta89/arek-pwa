@@ -10,7 +10,7 @@ import { WagaComponent } from './waga/waga.component';
 import { DashboardRozneComponent } from './dashboard-rozne/dashboard-rozne.component';
 import { DashboardUploadComponent } from './dashboard-upload/dashboard-upload.component';
 
-import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { DashboardTodoComponent } from './dashboard-todo/dashboard-todo.component';
 
 @NgModule({
@@ -19,7 +19,7 @@ import { DashboardTodoComponent } from './dashboard-todo/dashboard-todo.componen
     // BrowserAnimationsModule,
     DashboardRoutingModule,
     MaterialModule,
-    GalleryModule.forRoot(),
+    GalleryModule,
     AngularFireStorageModule
   ],
   declarations: [

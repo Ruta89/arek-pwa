@@ -58,7 +58,7 @@ export class DashboardGalleryComponent implements OnInit {
   ngOnInit() {
     // this.gallery.load(this.images);
     this.items = this.images.map(
-      item => new ImageItem(item.src, item.thumbnail)
+      item => new ImageItem({src: 'item.src', thumb: 'item.thumbnail'})
     );
   }
 }

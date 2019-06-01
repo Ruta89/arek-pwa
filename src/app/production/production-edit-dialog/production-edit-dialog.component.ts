@@ -24,7 +24,7 @@
 // }
 import { Component, Inject } from '@angular/core';
 // import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-// import { AngularFirestore } from 'angularfire2/firestore';
+// import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-production-edit-dialog',
